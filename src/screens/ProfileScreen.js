@@ -1,8 +1,5 @@
 import React from 'react';
-import {
-  View,
-  Button,
-} from 'react-native';
+import { Container, Content, Button, Text } from 'native-base';
 import {logout} from '../api/userClient';
 import {clearToken} from '../api/common';
 
@@ -27,14 +24,13 @@ export default class ProfileScreen extends React.Component {
 
   render() {
     return(
-      <View>
-        <Button
-          onPress={this.handleLogout}
-          title="Logout"
-          color="#841584"
-          accessibilityLabel="Logout"
-        />
-      </View>
+      <Container>
+        <Content>
+          <Button block primary onPress={this.handleLogout}>
+            <Text>Logout</Text>
+          </Button>
+        </Content>
+      </Container>
     )
   }
 }

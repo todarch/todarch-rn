@@ -7,8 +7,10 @@ import {
 import {getTodoDetail} from '../api/todoClient';
 
 export default class TodoDetailScreen extends React.Component {
-  static navigationOptions = {
-    title: 'Todo Detail'
+  static navigationOptions = ({ navigation }) => {
+    return {
+      title: navigation.getParam('todoTitle', 'Todo Details'),
+    };
   };
 
   constructor(props) {

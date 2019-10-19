@@ -14,8 +14,8 @@ export function createTodo(todoRequest) {
   const newTodo = {
     title: todoRequest.title,
     description: todoRequest.description,
-    priority: todoRequest.priority,
-    timeNeededInMin: todoRequest.timeNeededInMin,
+    priority: Number.parseInt(todoRequest.priority, 10),
+    timeNeededInMin: Number.parseInt(todoRequest.timeNeededInMin, 10),
   };
   return callApi({
     url: `${todoApi}/api/todos/`,

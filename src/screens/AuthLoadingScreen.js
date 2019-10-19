@@ -1,9 +1,8 @@
 import React from 'react';
 import {
-  ActivityIndicator,
   StatusBar,
-  View,
 } from 'react-native';
+import { Container,  Content, Spinner } from 'native-base';
 import {isLoggedIn} from '../api/userClient';
 
 export default class AuthLoadingScreen extends React.Component {
@@ -24,10 +23,12 @@ export default class AuthLoadingScreen extends React.Component {
 
   render() {
     return (
-      <View>
-        <ActivityIndicator />
-        <StatusBar barStyle="default" />
-      </View>
+      <Container>
+        <Content>
+          <Spinner />
+          <StatusBar barStyle="default" />
+        </Content>
+      </Container>
     );
   }
 }

@@ -1,5 +1,6 @@
 import { AsyncStorage } from 'react-native';
 import _ from 'lodash';
+import { Toast } from 'native-base';
 
 const tokenStorageKey = 'userToken';
 
@@ -71,3 +72,15 @@ export function callApi({url, method='GET', body={}}) {
   });
 
 }
+
+export const toastr = {
+  showToast: (message, duration = 4500) => {
+    Toast.show({
+      text: message,
+      duration,
+      position: 'bottom',
+      textStyle: { textAlign: 'center' },
+      buttonText: 'OK',
+    });
+  },
+};
